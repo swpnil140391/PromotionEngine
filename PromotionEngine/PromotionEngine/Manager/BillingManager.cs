@@ -66,7 +66,7 @@ namespace PromotionEngine.Manager
                     switch (promOffer.Type)
                     {
                         case PromotionType.Combined:
-                            if (!ContainesBothSKUIDs(OperationManager._PurchaseManager.CurrentOrderDetails, promOffer.SKUIDs))
+                            if (!ContainesBothSKUIDs(OperationManager._PurchaseManager.CurrentOrderDetails, promOffer.SKUIDs) && !prompocodeapplied.Contains(OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID))
                             {
                                 finalamount = finalamount + (OperationManager._SKUDetailsManager.SKUDetails[OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID] * OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity);
                                 Console.WriteLine("Price for SKUID : " + OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID + " Quantity " + OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity + " Is " + (OperationManager._SKUDetailsManager.SKUDetails[OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID] * OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity));

@@ -1,0 +1,93 @@
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+A
+Please enter the Quantity :
+3
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+B
+Please enter the Quantity :
+5
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+C
+Please enter the Quantity :
+1
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+D
+Please enter the Quantity :
+1
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+7
+Price for SKUID : A Quantity 3 Is 130
+Price for SKUID : B Quantity 5 Is 120
+Price for SKUID : D Quantity 1 Is 30
+Final Bill : 280
+Do you Want to Perform Once again Yes/No
