@@ -30,6 +30,34 @@ namespace PromotionEngine.Manager
                     Console.WriteLine("Price for SKUID : " + item.SKUID + " Quantity " + item.Quantity + " Is " + price);
                 }
             }
+            foreach (var item in OperationManager._PurchaseManager.CurrentOrderDetails)
+            {
+                PromotionDetails promOffer = OperationManager._PromotionManager.GetPromotionOffer(item.SKUID);
+                if (promOffer != null)
+                {
+                    switch (promOffer.Type)
+                    {
+                        case PromotionType.Combined:
+                            break;
+                        case PromotionType.Count:
+                            if(item.Quantity < promOffer.Count)
+                            {
+                                int price = GetPrice(item.SKUID, item.Quantity);
+                                finalamount = finalamount + price;
+                                Console.WriteLine("Price for SKUID : " + item.SKUID + " Quantity " + item.Quantity + " Is " + price);
+                            }
+                            else
+                            {
+                                int price = GetDiscountedPrice(item.SKUID, item.Quantity, promOffer);
+                                finalamount = finalamount + price;
+                                Console.WriteLine("Price for SKUID : " + item.SKUID + " Quantity " + item.Quantity + " Is " + price);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
             Console.WriteLine("Final Bill : " + finalamount);
         }
 
@@ -42,6 +70,31 @@ namespace PromotionEngine.Manager
         public int GetPrice(string SKUID, int quantity)
         {
             return (OperationManager._SKUDetailsManager.SKUDetails[SKUID] * quantity);
+        }
+
+        /// <summary>
+        /// This will get price for Discounted items
+        /// </summary>
+        /// <param name="SKUID"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public int GetDiscountedPrice(string SKUID, int quantity, PromotionDetails prom)
+        {
+            int finalprice = 0;
+            int remainingQuantity = quantity;
+            while (true)
+            {
+                finalprice = finalprice + (prom.DiscountPrice);
+                remainingQuantity = remainingQuantity - prom.Count;
+                if (remainingQuantity < prom.Count)
+                {
+                    finalprice = finalprice + (OperationManager._SKUDetailsManager.SKUDetails[SKUID] * remainingQuantity);
+                    remainingQuantity = 0;
+                }
+                if (remainingQuantity <= 0)
+                    break;
+            }
+            return finalprice;
         }
     }
 }
