@@ -9,11 +9,12 @@ namespace PromotionEngine.Manager
     /// <summary>
     /// This Method will be responsible 
     /// </summary>
-    public class OperationManager
+    class OperationManager
     {
-        private static SKUDetailsManager _SKUDetailsManager = new SKUDetailsManager();
-        private static PromotionManager _PromotionManager = new PromotionManager();
-        private static PurchaseManager _PurchaseManager = new PurchaseManager();
+        public static SKUDetailsManager _SKUDetailsManager = new SKUDetailsManager();
+        public static PromotionManager _PromotionManager = new PromotionManager();
+        public static PurchaseManager _PurchaseManager = new PurchaseManager();
+        public static BillingManager _BillingManager = new BillingManager();
         public static void PerformOperation(int code)
         {
             switch (code)
@@ -29,6 +30,9 @@ namespace PromotionEngine.Manager
                     break;
                 case 6:
                     _PurchaseManager.PerformOperation(code);
+                    break;
+                case 7:
+                    _BillingManager.PerformOperation(code);
                     break;
                 default:
                     Console.WriteLine("Operation Code not found!");
