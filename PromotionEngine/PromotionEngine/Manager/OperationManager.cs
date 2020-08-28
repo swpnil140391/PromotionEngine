@@ -12,7 +12,8 @@ namespace PromotionEngine.Manager
     public class OperationManager
     {
         private static SKUDetailsManager _SKUDetailsManager = new SKUDetailsManager();
-        private static PromotionManager _PromotionManager = new PromotionManager(); 
+        private static PromotionManager _PromotionManager = new PromotionManager();
+        private static PurchaseManager _PurchaseManager = new PurchaseManager();
         public static void PerformOperation(int code)
         {
             switch (code)
@@ -25,6 +26,9 @@ namespace PromotionEngine.Manager
                     break;
                 case 5:
                     _PromotionManager.PerformOperation(code);
+                    break;
+                case 6:
+                    _PurchaseManager.PerformOperation(code);
                     break;
                 default:
                     Console.WriteLine("Operation Code not found!");

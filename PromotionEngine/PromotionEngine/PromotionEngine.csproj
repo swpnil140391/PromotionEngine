@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Manager\OperationManager.cs" />
     <Compile Include="Manager\PromotionManager.cs" />
+    <Compile Include="Manager\PurchaseManager.cs" />
     <Compile Include="Manager\SKUDetailsManager.cs" />
     <Compile Include="Models\PromotionDetails.cs" />
     <Compile Include="Program.cs" />
