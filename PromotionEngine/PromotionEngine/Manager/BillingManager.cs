@@ -37,8 +37,6 @@ namespace PromotionEngine.Manager
                 {
                     switch (promOffer.Type)
                     {
-                        case PromotionType.Combined:
-                            break;
                         case PromotionType.Count:
                             if(item.Quantity < promOffer.Count)
                             {
@@ -58,7 +56,59 @@ namespace PromotionEngine.Manager
                     }
                 }
             }
+
+            List<string> prompocodeapplied = new List<string>();
+            for (int i = OperationManager._PurchaseManager.CurrentOrderDetails.Count - 1; i >= 0; i--)
+            {
+                PromotionDetails promOffer = OperationManager._PromotionManager.GetPromotionOffer(OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID);
+                if (promOffer != null)
+                {
+                    switch (promOffer.Type)
+                    {
+                        case PromotionType.Combined:
+                            if (!ContainesBothSKUIDs(OperationManager._PurchaseManager.CurrentOrderDetails, promOffer.SKUIDs))
+                            {
+                                finalamount = finalamount + (OperationManager._SKUDetailsManager.SKUDetails[OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID] * OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity);
+                                Console.WriteLine("Price for SKUID : " + OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID + " Quantity " + OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity + " Is " + (OperationManager._SKUDetailsManager.SKUDetails[OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID] * OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity));
+                            }
+                            else if (!prompocodeapplied.Contains(OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID))
+                            {
+                                finalamount = finalamount + promOffer.DiscountPrice;
+                                Console.WriteLine("Price for SKUID : " + OperationManager._PurchaseManager.CurrentOrderDetails[i].SKUID + " Quantity " + OperationManager._PurchaseManager.CurrentOrderDetails[i].Quantity + " Is " + promOffer.DiscountPrice);
+                                OperationManager._PurchaseManager.CurrentOrderDetails.RemoveAt(i);
+                                prompocodeapplied.AddRange(promOffer.SKUIDs);
+                            }
+                            else
+                            {
+
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
             Console.WriteLine("Final Bill : " + finalamount);
+        }
+
+        /// <summary>
+        /// Check if Combinaed both SKUS offer is valid on order or not
+        /// </summary>
+        /// <param name="orders"></param>
+        /// <param name="skuids"></param>
+        /// <returns></returns>
+        private bool ContainesBothSKUIDs(List<OrderDetails> orders, List<string> skuids)
+        {
+            int exists = 0;
+            foreach (var item in orders)
+            {
+                if (skuids.Contains(item.SKUID))
+                    exists = exists + 1;
+            }
+            if (exists > 1)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>

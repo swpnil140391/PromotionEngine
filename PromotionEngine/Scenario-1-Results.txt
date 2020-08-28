@@ -1,0 +1,89 @@
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+A
+Please enter the Quantity :
+1
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+B
+Please enter the Quantity :
+1
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+C
+Invalid Operation Code, Please try again
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+6
+Please specify the SKU ID that you want to purchase :
+C
+Please enter the Quantity :
+1
+Order added Successfully
+Do you Want to Perform Once again Yes/No
+yes
+Welcome To Promotion Engine
+#######################################
+1. Show the SKU Details
+2. Add the SKU Details
+3. Update the SKU Details
+4. Delete the SKU Details
+5. Show Active Promotions
+6. Go For Purchase
+7. View Final Bill
+#######################################
+Please Select your Desired Option
+7
+Price for SKUID : A Quantity 1 Is 50
+Price for SKUID : B Quantity 1 Is 30
+Price for SKUID : C Quantity 1 Is 20
+Final Bill : 100
+Do you Want to Perform Once again Yes/No
