@@ -14,7 +14,7 @@ namespace PromotionEngine.Manager
         /// <summary>
         /// The given dictionary will manage the SKUDetails like SKU ID's & their price
         /// </summary>
-        private Dictionary<string, int> SKUDetails = null;
+        public Dictionary<string, int> SKUDetails = null;
 
         /// <summary>
         /// Class Constructor

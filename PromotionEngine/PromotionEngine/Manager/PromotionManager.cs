@@ -49,6 +49,22 @@ namespace PromotionEngine.Manager
             ActivePromotionDetails.Add(details3);
         }
 
+        /// <summary>
+        /// here we will get the promotion offer for SKUID
+        /// </summary>
+        /// <param name="SKUID"></param>
+        /// <returns></returns>
+        public PromotionDetails GetPromotionOffer(string SKUID)
+        {
+            PromotionDetails pDetails = null;
+            foreach (var item in ActivePromotionDetails)
+            {
+                if (item.SKUIDs.Contains(SKUID))
+                    return item;
+            }
+            return pDetails;
+        }
+
         public void PerformOperation(int code)
         {
             switch (code)
