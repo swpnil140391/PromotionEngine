@@ -98,6 +98,26 @@ namespace PromotionEngine.Manager
                         break;
                     }
                     #endregion
+                case 4:
+                    #region Delete SKU Details
+                    {
+                        Console.WriteLine("Please Specify the SKU ID :");
+                        string ID = Console.ReadLine();
+                        if (string.IsNullOrEmpty(ID))
+                        {
+                            Console.WriteLine("Empty SKUID is not allowed");
+                            return;
+                        }
+                        if (!IsSKUIDAlreadyExists(ID))
+                        {
+                            Console.WriteLine("SKUID does not exists");
+                            return;
+                        }
+                        SKUDetails.Remove(ID);
+                        Console.WriteLine("SKU Details deleted Successfully");
+                        break;
+                    } 
+                    #endregion
                 default:
                     break;
             }

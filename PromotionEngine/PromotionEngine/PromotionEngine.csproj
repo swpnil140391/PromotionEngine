@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager\OperationManager.cs" />
+    <Compile Include="Manager\PromotionManager.cs" />
     <Compile Include="Manager\SKUDetailsManager.cs" />
+    <Compile Include="Models\PromotionDetails.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Constant\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
