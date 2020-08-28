@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\OperationManager.cs" />
+    <Compile Include="Manager\SKUDetailsManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Constant\" />
-    <Folder Include="Manager\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
