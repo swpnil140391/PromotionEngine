@@ -9,7 +9,7 @@ namespace PromotionEngine.Manager
     /// <summary>
     /// this Class Will Manage the SKU's & their price
     /// </summary>
-    class SKUDetailsManager
+    public class SKUDetailsManager
     {
         /// <summary>
         /// The given dictionary will manage the SKUDetails like SKU ID's & their price

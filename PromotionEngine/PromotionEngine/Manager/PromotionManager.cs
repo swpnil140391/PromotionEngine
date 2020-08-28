@@ -10,7 +10,7 @@ namespace PromotionEngine.Manager
     /// <summary>
     /// This Class will deals with Adding/viewing/updating the Active Promotions
     /// </summary>
-    class PromotionManager
+    public class PromotionManager
     {
         /// <summary>
         /// Active Promotion Details

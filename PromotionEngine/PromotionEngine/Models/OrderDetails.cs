@@ -9,7 +9,7 @@ namespace PromotionEngine.Models
     /// <summary>
     /// This class will maange the Order Details
     /// </summary>
-    class OrderDetails
+    public class OrderDetails
     {
         /// <summary>
         /// SKU ID

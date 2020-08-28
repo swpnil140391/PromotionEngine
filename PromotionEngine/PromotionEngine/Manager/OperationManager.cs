@@ -9,7 +9,7 @@ namespace PromotionEngine.Manager
     /// <summary>
     /// This Method will be responsible 
     /// </summary>
-    class OperationManager
+    public class OperationManager
     {
         public static SKUDetailsManager _SKUDetailsManager = new SKUDetailsManager();
         public static PromotionManager _PromotionManager = new PromotionManager();

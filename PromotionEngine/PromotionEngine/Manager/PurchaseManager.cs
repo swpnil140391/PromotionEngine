@@ -10,7 +10,7 @@ namespace PromotionEngine.Manager
     /// <summary>
     /// This will Handle the purchase details for the same
     /// </summary>
-    class PurchaseManager
+    public class PurchaseManager
     {
         public List<OrderDetails> CurrentOrderDetails = new List<OrderDetails>();
         /// <summary>

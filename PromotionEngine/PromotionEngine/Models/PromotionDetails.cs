@@ -9,7 +9,7 @@ namespace PromotionEngine.Models
     /// <summary>
     /// This Class will Manage the Promotion Details
     /// </summary>
-    class PromotionDetails
+    public class PromotionDetails
     {
         /// <summary>
         /// the sample Promotion Name

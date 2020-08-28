@@ -10,14 +10,14 @@ namespace PromotionEngine.Manager
     /// <summary>
     /// Billing Manager will finally will be responsible for Getting Itemzied & Final Amount
     /// </summary>
-    class BillingManager
+    public class BillingManager
     {
-        public void PerformOperation(int code)
+        public int PerformOperation(int code)
         {
             if(OperationManager._PurchaseManager.CurrentOrderDetails.Count == 0)
             {
                 Console.WriteLine("No Purchase Orders Found");
-                return;
+                return 0;
             }
             int finalamount = 0;
             foreach (var item in OperationManager._PurchaseManager.CurrentOrderDetails)
@@ -89,6 +89,7 @@ namespace PromotionEngine.Manager
                 }
             }
             Console.WriteLine("Final Bill : " + finalamount);
+            return finalamount;
         }
 
         /// <summary>
