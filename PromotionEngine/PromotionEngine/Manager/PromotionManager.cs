@@ -73,7 +73,7 @@ namespace PromotionEngine.Manager
                     foreach (var item in ActivePromotionDetails)
                     {
                         Console.WriteLine("$$$$");
-                        Console.WriteLine("Promotion Name : "+item.PromotionName);
+                        Console.WriteLine("Promotion Name : " + item.PromotionName);
                         Console.WriteLine("Promotion Discount Price : " + item.DiscountPrice);
                         switch (item.Type)
                         {
@@ -81,7 +81,7 @@ namespace PromotionEngine.Manager
                                 string finalstr = string.Empty;
                                 foreach (var IDs in item.SKUIDs)
                                 {
-                                    finalstr = finalstr + IDs + ",";   
+                                    finalstr = finalstr + IDs + ",";
                                 }
                                 Console.WriteLine("Promotion Applicable for Combination of SKUs: " + finalstr.TrimEnd(','));
                                 break;
@@ -95,6 +95,42 @@ namespace PromotionEngine.Manager
                     }
                     break;
                 case 6:
+                    Console.WriteLine("Please Specify the SKU ID :");
+                    string ID = Console.ReadLine();
+                    if (string.IsNullOrEmpty(ID))
+                    {
+                        Console.WriteLine("Empty SKUID is not allowed");
+                        return;
+                    }
+                    if (!OperationManager._SKUDetailsManager.IsSKUIDAlreadyExists(ID))
+                    {
+                        Console.WriteLine("SKUID does not exists");
+                        return;
+                    }
+                    int price = 0;
+                    Console.WriteLine("Please enter the price : ");
+                    if (!int.TryParse(Console.ReadLine(), out price))
+                    {
+                        Console.WriteLine("Invalid Price");
+                        return;
+                    }
+
+                    int quantity = 0;
+                    Console.WriteLine("Please enter the Quantity : ");
+                    if (!int.TryParse(Console.ReadLine(), out quantity))
+                    {
+                        Console.WriteLine("Invalid Quantity");
+                        return;
+                    }
+
+                    PromotionDetails details2 = new PromotionDetails();
+                    details2.PromotionName = "Promotion Added";
+                    details2.SKUIDs = new List<string>()  {ID };
+                    details2.Type = PromotionType.Count;
+                    details2.DiscountPrice = price;
+                    details2.Count = quantity;
+                    ActivePromotionDetails.Add(details2);
+                    Console.WriteLine("Promotion Details added Successfully");
                     break;
                 default:
                     break;
