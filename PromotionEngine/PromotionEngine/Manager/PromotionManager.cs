@@ -94,6 +94,8 @@ namespace PromotionEngine.Manager
                         Console.WriteLine("$$$$");
                     }
                     break;
+                case 6:
+                    break;
                 default:
                     break;
             }

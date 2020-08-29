@@ -26,12 +26,13 @@ namespace PromotionEngine.Manager
                     _SKUDetailsManager.PerformOperation(code);
                     break;
                 case 5:
+                case 6:
                     _PromotionManager.PerformOperation(code);
                     break;
-                case 6:
+                case 7:
                     _PurchaseManager.PerformOperation(code);
                     break;
-                case 7:
+                case 8:
                     _BillingManager.PerformOperation(code);
                     break;
                 default:

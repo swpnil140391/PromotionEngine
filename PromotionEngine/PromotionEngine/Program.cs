@@ -27,8 +27,9 @@ namespace PromotionEngine
                 Console.WriteLine("3. Update the SKU Details");
                 Console.WriteLine("4. Delete the SKU Details");
                 Console.WriteLine("5. Show Active Promotions");
-                Console.WriteLine("6. Go For Purchase");
-                Console.WriteLine("7. View Final Bill");
+                Console.WriteLine("6. Add Promotions");
+                Console.WriteLine("7. Go For Purchase");
+                Console.WriteLine("8. View Final Bill");
                 Console.WriteLine("#######################################");
                 Console.WriteLine("Please Select your Desired Option");
                 int code = 0;
