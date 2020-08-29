@@ -41,12 +41,16 @@ namespace PromotionEngine
                 {
                     Console.WriteLine("Invalid Operation Code, Please try again");
                 }
-                Console.WriteLine("Do you Want to Perform Once again Yes/No");
+                Console.WriteLine("Do you Want to Perform Once again Y/N");
                 string val = Console.ReadLine();
                 if (string.IsNullOrEmpty(val))
                     continue;
-                if (val.ToString().ToUpperInvariant() == "NO")
+                else if (val.ToString().ToUpperInvariant() == "N")
                     break;
+                else if (val.ToString().ToUpperInvariant() == "Y")
+                    continue;
+                else
+                    Console.WriteLine("Invalid Choice! Please select again");
             }
         }
     }
